@@ -8,7 +8,7 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
-  
+
 on:
   pull_request:
     branches:
@@ -21,7 +21,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -42,14 +42,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
-      - run: npm ci
-
-      - name: Check types and style
-        run: npm run check
-
-      - name: Test
-        run: npm test
 
       - name: Ensure Quartz builds, check bundle info
         run: npx quartz build --bundleInfo

@@ -1,9 +1,6 @@
 ---
-
 title: introduction
-
 ---
-
 
 I'm Ryazan, an average programmer and non-native English speaker (thanks to LLMs!). I've always struggled to stay focused on a single project, resulting in a vast cemetery of abandoned ideas, which makes me quite sad.
 

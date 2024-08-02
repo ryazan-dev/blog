@@ -22,7 +22,7 @@ on:
 
 jobs:
   build-and-test:
-    if: ${{ github.repository == 'jackyzha0/quartz' }}
+    if: ${{ github.repository == 'ryazan-dev/blog' }}
     strategy:
       matrix:
         os: [windows-latest, macos-latest, ubuntu-latest]

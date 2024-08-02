@@ -21,7 +21,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -42,6 +42,8 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+
+      - run: npm ci
 
       - name: Ensure Quartz builds, check bundle info
         run: npx quartz build --bundleInfo
